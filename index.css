@@ -1,0 +1,151 @@
+/* Stage Positioning */
+.simulation-stage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 3D Water Wheel */
+.generator-assembly {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    margin-right: 150px;
+}
+
+.water-wheel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 40px solid #bc8b5c; /* Lighter wood base */
+    box-shadow: 
+        inset 0 10px 25px rgba(0,0,0,0.8), /* Inner shadow */
+        0 15px 25px rgba(0,0,0,0.6),       /* Outer drop shadow */
+        inset 0 0 0 2px #5e3a1f;           /* Inner rim definition */
+    animation: spin 1.5s linear infinite;
+}
+
+/* 8-Spoke Design */
+.spoke-set {
+    position: absolute;
+    top: 50%; left: -40px; right: -40px;
+    height: 30px;
+    margin-top: -15px;
+    background: linear-gradient(to bottom, #9a6839, #704722);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+}
+.spoke-set::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: inherit;
+    transform: rotate(90deg);
+}
+.diagonal { transform: rotate(45deg); }
+
+/* Cylindrical 3D Magnet */
+.magnet-rotor {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    width: 280px;
+    height: 70px;
+    border-radius: 4px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.7), inset 0 2px 4px rgba(255,255,255,0.3);
+    animation: spin 1.5s linear infinite;
+    z-index: 2;
+}
+
+.pole {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 42px;
+    font-weight: 800;
+    color: white;
+    text-shadow: 1px 2px 4px rgba(0,0,0,0.7);
+}
+
+.south-pole {
+    /* Cylindrical gradient */
+    background: linear-gradient(180deg, #6ba5eb 0%, #2f69ce 30%, #1c4b9c 80%, #0d2859 100%);
+    border-radius: 4px 0 0 4px;
+    border: 1px solid #143a68;
+    border-right: 1px solid #111;
+}
+
+.north-pole {
+    /* Cylindrical gradient */
+    background: linear-gradient(180deg, #f26d6d 0%, #d83131 30%, #a11c1c 80%, #5e0d0d 100%);
+    border-radius: 0 4px 4px 0;
+    border: 1px solid #681414;
+    border-left: 1px solid #111;
+}
+
+/* Centered Digital Gauge */
+.center-gauge {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, #2a2a2a, #111);
+    border: 5px solid #e5e7eb;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.9), inset 0 0 15px rgba(0,0,0,1);
+    z-index: 3;
+}
+
+.gauge-dial {
+    position: absolute;
+    top: 5px; left: 5px; right: 5px; bottom: 5px;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-top-color: #38bdf8; /* Blue arc */
+    transform: rotate(-45deg);
+}
+
+.gauge-value {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    z-index: 2;
+}
+
+.gauge-unit {
+    font-size: 11px;
+    color: #9ca3af;
+    margin-top: 2px;
+    z-index: 2;
+}
+
+/* Copper Coils & Lightbulb */
+.coils-container {
+    position: absolute;
+    right: 20%;
+    top: 45%;
+    transform: translateY(-50%);
+}
+
+.bulb-container {
+    position: absolute;
+    right: 22%;
+    top: 15%;
+    font-size: 90px;
+    color: #ffaa00;
+    filter: drop-shadow(0 0 30px #ff7b00) drop-shadow(0 0 60px #ffaa00);
+}
+
+@keyframes spin {
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
