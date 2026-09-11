@@ -1,0 +1,45 @@
+<div class="simulation-stage">
+    <!-- Faucet & Water (Best handled with image assets) -->
+    <img src="faucet-asset.png" alt="Faucet" class="faucet-img">
+    <img src="water-stream.png" alt="Water stream" class="water-img">
+
+    <!-- Wheel and Magnet Assembly -->
+    <div class="generator-assembly">
+        <div class="water-wheel">
+            <div class="spoke-set normal"></div>
+            <div class="spoke-set diagonal"></div>
+        </div>
+        
+        <div class="magnet-rotor">
+            <div class="pole south-pole">S</div>
+            <div class="pole north-pole">N</div>
+        </div>
+
+        <div class="center-gauge">
+            <div class="gauge-dial"></div>
+            <span class="gauge-value">120.0</span>
+            <span class="gauge-unit">RPM</span>
+        </div>
+    </div>
+
+    <!-- Copper Coils (SVG for 3D perspective) -->
+    <div class="coils-container">
+        <svg viewBox="0 0 200 150" width="250" height="150">
+            <!-- Top Loop -->
+            <ellipse cx="100" cy="40" rx="90" ry="20" fill="none" stroke="#d38258" stroke-width="4"/>
+            <ellipse cx="100" cy="45" rx="90" ry="20" fill="none" stroke="#a0522d" stroke-width="4"/>
+            <ellipse cx="100" cy="50" rx="90" ry="20" fill="none" stroke="#d38258" stroke-width="4"/>
+            <!-- Bottom Loop -->
+            <ellipse cx="100" cy="100" rx="90" ry="20" fill="none" stroke="#d38258" stroke-width="4"/>
+            <ellipse cx="100" cy="105" rx="90" ry="20" fill="none" stroke="#a0522d" stroke-width="4"/>
+            <ellipse cx="100" cy="110" rx="90" ry="20" fill="none" stroke="#d38258" stroke-width="4"/>
+            <!-- Connecting wires -->
+            <path d="M 10 50 L 10 100 M 190 50 L 190 100" stroke="#d38258" stroke-width="4"/>
+        </svg>
+    </div>
+
+    <!-- Lightbulb -->
+    <div class="bulb-container">
+        <i class="fa-solid fa-lightbulb active-glow"></i>
+    </div>
+</div>
